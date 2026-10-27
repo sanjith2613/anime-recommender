@@ -1,0 +1,9 @@
+{
+  "hybrid_weight_content": 0.5,
+  "eval_best_weight_content": 0.2,
+  "als": {
+    "factors": 32,
+    "regularization": 0.05,
+    "alpha": 1.0
+  }
+}

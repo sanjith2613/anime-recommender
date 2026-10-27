@@ -1,0 +1,46 @@
+{
+  "protocol": "per-user random 20% holdout; relevant = held-out anime rated >= 8; settings tuned on half of the users, numbers below are on the other half; already-seen titles excluded",
+  "data": {
+    "anime": 4898,
+    "ratings": 829934,
+    "users": 812
+  },
+  "als": {
+    "factors": 32,
+    "regularization": 0.05,
+    "alpha": 1.0
+  },
+  "hybrid_weight_content": 0.2,
+  "results": {
+    "Most popular (baseline)": {
+      "precision@10": 0.42980295566502463,
+      "recall@10": 0.42980295566502463,
+      "ndcg@10": 0.4600320448457088,
+      "users": 406
+    },
+    "Content: TF-IDF": {
+      "precision@10": 0.33546798029556646,
+      "recall@10": 0.33557353976073184,
+      "ndcg@10": 0.3674066716854621,
+      "users": 406
+    },
+    "Content: sentence embeddings": {
+      "precision@10": 0.10911330049261082,
+      "recall@10": 0.10911330049261082,
+      "ndcg@10": 0.11464397759791181,
+      "users": 406
+    },
+    "Collaborative filtering: ALS (32 factors)": {
+      "precision@10": 0.5428571428571428,
+      "recall@10": 0.5429627023223081,
+      "ndcg@10": 0.5557284306848236,
+      "users": 406
+    },
+    "Hybrid (0.2 content + 0.8 ALS)": {
+      "precision@10": 0.5800492610837439,
+      "recall@10": 0.5800492610837439,
+      "ndcg@10": 0.5974874638943992,
+      "users": 406
+    }
+  }
+}
