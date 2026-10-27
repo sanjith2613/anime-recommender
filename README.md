@@ -3,7 +3,9 @@
 A web app that recommends anime. Pick 3–5 shows you love and it returns 10 picks, each with its cover art, MyAnimeList score, genres, and a one-line reason ("Similar to Death Note: themes like serial killers, fugitive, suspense; people who liked Death Note also liked this").
 A second tab lets you describe what you want in plain English, e.g. *"dark psychological thriller under 25 episodes"*. It runs a meaning-based (embedding) search and applies the episode limit from your text automatically.
 
-**🔗 Live demo:** _coming soon, add your `https://<your-app>.streamlit.app` link here after deploying_
+**🔗 Live demo:** [https://frisky-anime-recommender.streamlit.app/](https://frisky-anime-recommender.streamlit.app/)
+
+[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://frisky-anime-recommender.streamlit.app/)
 
 ![screenshot](screenshot.png)
 
