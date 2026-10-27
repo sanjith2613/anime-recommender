@@ -1,0 +1,12 @@
+# Python
+.venv/
+venv/
+__pycache__/
+*.pyc
+# raw downloads (re-created by prepare_data.py)
+data/raw/
+# logs / local
+*.log
+.DS_Store
+.streamlit/secrets.toml
+.env

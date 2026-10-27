@@ -1,0 +1,6 @@
+# Extra packages only needed to rebuild the data and models (prepare_data.py, build_models.py)
+-r requirements.txt
+scikit-learn>=1.4
+scipy>=1.11
+implicit>=0.7
+threadpoolctl>=3
