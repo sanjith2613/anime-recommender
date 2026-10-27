@@ -1,9 +1,9 @@
 {
-  "protocol": "per-user random 20% holdout; relevant = held-out anime rated >= 8; settings tuned on half of the users, numbers below are on the other half; already-seen titles excluded",
+  "protocol": "Full history: per-user random 20% holdout; relevant = held-out anime rated >= 8; settings tuned on half the users; numbers below are the other half; already-seen titles excluded. Recall@10 = hits in the top 10 divided by all held-out likes (not capped at 10).",
   "data": {
-    "anime": 4898,
-    "ratings": 829934,
-    "users": 812
+    "anime": 7423,
+    "ratings": 1015487,
+    "users": 813
   },
   "als": {
     "factors": 32,
@@ -11,36 +11,74 @@
     "alpha": 1.0
   },
   "hybrid_weight_content": 0.2,
+  "few_seed_best_weight_content": 0.1,
+  "app_default_weight_content": 0.2,
   "results": {
     "Most popular (baseline)": {
-      "precision@10": 0.42980295566502463,
-      "recall@10": 0.42980295566502463,
-      "ndcg@10": 0.4600320448457088,
-      "users": 406
+      "precision@10": 0.44250616431236267,
+      "recall@10": 0.0432567372918129,
+      "ndcg@10": 0.4706272682357277,
+      "users": 407
     },
     "Content: TF-IDF": {
-      "precision@10": 0.33546798029556646,
-      "recall@10": 0.33557353976073184,
-      "ndcg@10": 0.3674066716854621,
-      "users": 406
+      "precision@10": 0.2523341476917267,
+      "recall@10": 0.02808920480310917,
+      "ndcg@10": 0.2679000361539525,
+      "users": 407
     },
     "Content: sentence embeddings": {
-      "precision@10": 0.10911330049261082,
-      "recall@10": 0.10911330049261082,
-      "ndcg@10": 0.11464397759791181,
-      "users": 406
+      "precision@10": 0.08402949571609497,
+      "recall@10": 0.008862308226525784,
+      "ndcg@10": 0.09004753106924326,
+      "users": 407
     },
     "Collaborative filtering: ALS (32 factors)": {
-      "precision@10": 0.5428571428571428,
-      "recall@10": 0.5429627023223081,
-      "ndcg@10": 0.5557284306848236,
-      "users": 406
+      "precision@10": 0.571744441986084,
+      "recall@10": 0.059318747371435165,
+      "ndcg@10": 0.5828580751760783,
+      "users": 407
     },
     "Hybrid (0.2 content + 0.8 ALS)": {
-      "precision@10": 0.5800492610837439,
-      "recall@10": 0.5800492610837439,
-      "ndcg@10": 0.5974874638943992,
-      "users": 406
+      "precision@10": 0.5995085835456848,
+      "recall@10": 0.06322554498910904,
+      "ndcg@10": 0.6144009117288959,
+      "users": 407
+    }
+  },
+  "few_seed": {
+    "protocol": "Each user contributes only their top 3, 4, or 5 training titles rated >= 8 (k cycles by user id). Scoring matches the app: mean of those seeds, crowd score trusted less below 50 ratings, small boost for a higher MyAnimeList score. Hits are still the held-out titles rated >= 8. Recall@10 uses all of those titles as the denominator.",
+    "best_weight_content": 0.1,
+    "results": {
+      "Most popular (baseline)": {
+        "precision@10": 0.44250616431236267,
+        "recall@10": 0.0432567372918129,
+        "ndcg@10": 0.4706272682357277,
+        "users": 407
+      },
+      "Content: sentence embeddings": {
+        "precision@10": 0.08992629498243332,
+        "recall@10": 0.009872246533632278,
+        "ndcg@10": 0.10303245023569986,
+        "users": 407
+      },
+      "Collaborative filtering: ALS (32 factors)": {
+        "precision@10": 0.4864864945411682,
+        "recall@10": 0.05105127766728401,
+        "ndcg@10": 0.5162514363137168,
+        "users": 407
+      },
+      "Hybrid (0.1 content + 0.9 ALS)": {
+        "precision@10": 0.48796066641807556,
+        "recall@10": 0.05126441270112991,
+        "ndcg@10": 0.5205622589005544,
+        "users": 407
+      },
+      "Hybrid at full-history weight (0.2)": {
+        "precision@10": 0.47960689663887024,
+        "recall@10": 0.049877870827913284,
+        "ndcg@10": 0.5108025424924192,
+        "users": 407
+      }
     }
   }
 }

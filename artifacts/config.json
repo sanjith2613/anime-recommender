@@ -1,9 +1,11 @@
 {
-  "hybrid_weight_content": 0.5,
+  "hybrid_weight_content": 0.2,
   "eval_best_weight_content": 0.2,
+  "few_seed_best_weight_content": 0.1,
   "als": {
     "factors": 32,
     "regularization": 0.05,
     "alpha": 1.0
-  }
+  },
+  "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
 }
